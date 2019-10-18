@@ -31,17 +31,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_nev = new System.Windows.Forms.TextBox();
             this.txt_ujhobbi = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.hobbiLista = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_hozzaad = new System.Windows.Forms.Button();
+            this.btn_mentes = new System.Windows.Forms.Button();
+            this.btn_betoltes = new System.Windows.Forms.Button();
             this.F = new System.Windows.Forms.RadioButton();
             this.N = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.szul_datum = new System.Windows.Forms.DateTimePicker();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
@@ -73,12 +73,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nem:";
             // 
-            // textBox1
+            // txt_nev
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txt_nev.Location = new System.Drawing.Point(125, 30);
+            this.txt_nev.Name = "txt_nev";
+            this.txt_nev.Size = new System.Drawing.Size(100, 20);
+            this.txt_nev.TabIndex = 3;
             // 
             // txt_ujhobbi
             // 
@@ -88,13 +88,13 @@
             this.txt_ujhobbi.TabIndex = 5;
             this.txt_ujhobbi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ujhobbi_KeyDown);
             // 
-            // listBox1
+            // hobbiLista
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(252, 46);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 6;
+            this.hobbiLista.FormattingEnabled = true;
+            this.hobbiLista.Location = new System.Drawing.Point(252, 46);
+            this.hobbiLista.Name = "hobbiLista";
+            this.hobbiLista.Size = new System.Drawing.Size(120, 95);
+            this.hobbiLista.TabIndex = 6;
             // 
             // label4
             // 
@@ -114,35 +114,35 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Új hobbi:";
             // 
-            // button1
+            // btn_hozzaad
             // 
-            this.button1.Location = new System.Drawing.Point(281, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 22);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Hozzáad";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_hozzaad.Location = new System.Drawing.Point(281, 183);
+            this.btn_hozzaad.Name = "btn_hozzaad";
+            this.btn_hozzaad.Size = new System.Drawing.Size(91, 22);
+            this.btn_hozzaad.TabIndex = 9;
+            this.btn_hozzaad.Text = "Hozzáad";
+            this.btn_hozzaad.UseVisualStyleBackColor = true;
+            this.btn_hozzaad.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btn_mentes
             // 
-            this.button2.Location = new System.Drawing.Point(193, 251);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Mentés";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_mentes.Location = new System.Drawing.Point(193, 251);
+            this.btn_mentes.Name = "btn_mentes";
+            this.btn_mentes.Size = new System.Drawing.Size(75, 25);
+            this.btn_mentes.TabIndex = 10;
+            this.btn_mentes.Text = "Mentés";
+            this.btn_mentes.UseVisualStyleBackColor = true;
+            this.btn_mentes.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btn_betoltes
             // 
-            this.button3.Location = new System.Drawing.Point(290, 252);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 24);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Betöltés";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_betoltes.Location = new System.Drawing.Point(290, 252);
+            this.btn_betoltes.Name = "btn_betoltes";
+            this.btn_betoltes.Size = new System.Drawing.Size(82, 24);
+            this.btn_betoltes.TabIndex = 11;
+            this.btn_betoltes.Text = "Betöltés";
+            this.btn_betoltes.UseVisualStyleBackColor = true;
+            this.btn_betoltes.Click += new System.EventHandler(this.button3_Click);
             // 
             // F
             // 
@@ -166,12 +166,12 @@
             this.N.Text = "N";
             this.N.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // szul_datum
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(125, 56);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.szul_datum.Location = new System.Drawing.Point(125, 56);
+            this.szul_datum.Name = "szul_datum";
+            this.szul_datum.Size = new System.Drawing.Size(100, 20);
+            this.szul_datum.TabIndex = 14;
             // 
             // saveFileDialog
             // 
@@ -186,17 +186,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 284);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.szul_datum);
             this.Controls.Add(this.N);
             this.Controls.Add(this.F);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_betoltes);
+            this.Controls.Add(this.btn_mentes);
+            this.Controls.Add(this.btn_hozzaad);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.hobbiLista);
             this.Controls.Add(this.txt_ujhobbi);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_nev);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -212,17 +212,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_nev;
         private System.Windows.Forms.TextBox txt_ujhobbi;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox hobbiLista;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_hozzaad;
+        private System.Windows.Forms.Button btn_mentes;
+        private System.Windows.Forms.Button btn_betoltes;
         private System.Windows.Forms.RadioButton F;
         private System.Windows.Forms.RadioButton N;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker szul_datum;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
     }

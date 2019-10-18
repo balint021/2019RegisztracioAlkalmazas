@@ -16,18 +16,18 @@ namespace RegisztracioAlkalmazas
         public Form1()
         {
             InitializeComponent();
-            listBox1.Items.Add("Uszás");
-            listBox1.Items.Add("Horgászat");
-            listBox1.Items.Add("Futás");
+            hobbiLista.Items.Add("Uszás");
+            hobbiLista.Items.Add("Horgászat");
+            hobbiLista.Items.Add("Futás");
         }
         
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!textBox1.Text.Equals("") && 
-                !dateTimePicker1.Text.Equals("") && 
+            if (!txt_nev.Text.Equals("") && 
+                !szul_datum.Text.Equals("") && 
                 (F.Checked || N.Checked)
-                && listBox1.SelectedItem != null)
+                && hobbiLista.SelectedItem != null)
             {
                 saveFileDialog.Filter = "Text File (.txt)|*.txt";
                 saveFileDialog.ShowDialog();
@@ -44,9 +44,9 @@ namespace RegisztracioAlkalmazas
             {
                 if (!txt_ujhobbi.Text.Trim().Equals(""))
                 {
-                    if (!listBox1.Items.Contains(txt_ujhobbi.Text))
+                    if (!hobbiLista.Items.Contains(txt_ujhobbi.Text))
                     {
-                        listBox1.Items.Add(txt_ujhobbi.Text);
+                        hobbiLista.Items.Add(txt_ujhobbi.Text);
                         txt_ujhobbi.Text = "";
                     }
                 }
@@ -57,9 +57,9 @@ namespace RegisztracioAlkalmazas
         {
             if (!txt_ujhobbi.Text.Trim().Equals(""))
             {
-                if (!listBox1.Items.Contains(txt_ujhobbi.Text))
+                if (!hobbiLista.Items.Contains(txt_ujhobbi.Text))
                 {
-                    listBox1.Items.Add(txt_ujhobbi.Text);
+                    hobbiLista.Items.Add(txt_ujhobbi.Text);
                     txt_ujhobbi.Text = "";
                 }
                 
@@ -72,8 +72,8 @@ namespace RegisztracioAlkalmazas
             {
                 using (var sw = new StreamWriter(saveFileDialog.FileName))
                 {
-                    sw.WriteLine(textBox1.Text);
-                    sw.WriteLine(dateTimePicker1.Text);
+                    sw.WriteLine(txt_nev.Text);
+                    sw.WriteLine(szul_datum.Text);
                     if (F.Checked)
                     {
                         sw.WriteLine("F");
@@ -82,7 +82,7 @@ namespace RegisztracioAlkalmazas
                     {
                         sw.WriteLine("N");
                     }
-                    sw.WriteLine(listBox1.SelectedItem);
+                    sw.WriteLine(hobbiLista.SelectedItem);
                 }
             }
             catch (IOException)
@@ -103,12 +103,12 @@ namespace RegisztracioAlkalmazas
             {
                 using (var sr = new StreamReader(openFileDialog.FileName))
                 {
-                    listBox1.Items.Clear();
-                    listBox1.Items.Add("Uszás");
-                    listBox1.Items.Add("Horgászat");
-                    listBox1.Items.Add("Futás");
-                    textBox1.Text = sr.ReadLine();
-                    dateTimePicker1.Text = sr.ReadLine();
+                    hobbiLista.Items.Clear();
+                    hobbiLista.Items.Add("Uszás");
+                    hobbiLista.Items.Add("Horgászat");
+                    hobbiLista.Items.Add("Futás");
+                    txt_nev.Text = sr.ReadLine();
+                    szul_datum.Text = sr.ReadLine();
                     var nem = sr.ReadLine();
                     if (nem.Equals("F"))
                     {
@@ -121,14 +121,14 @@ namespace RegisztracioAlkalmazas
                         N.Checked = true;
                     }
                     var kedvencHobbi = sr.ReadLine();
-                    if (listBox1.Items.Contains(kedvencHobbi))
+                    if (hobbiLista.Items.Contains(kedvencHobbi))
                     {
-                        listBox1.SelectedItem = kedvencHobbi;
+                        hobbiLista.SelectedItem = kedvencHobbi;
                     }
                     else
                     {
-                        listBox1.Items.Add(kedvencHobbi);
-                        listBox1.SelectedItem = kedvencHobbi;
+                        hobbiLista.Items.Add(kedvencHobbi);
+                        hobbiLista.SelectedItem = kedvencHobbi;
                     }
                 }
             }
